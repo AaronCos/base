@@ -3,10 +3,10 @@ package com.sswh.noraml;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import com.alibaba.druid.support.json.JSONUtils;
-import com.sswh.enumpackage.AbhsTimeUnit;
-import com.sswh.dao.IPlatformUserDao;
+import com.sswh.dao.PlatformUserDao;
 import com.sswh.dao.RecruitDao;
 import com.sswh.entity.PlatformUser;
+import com.sswh.enumpackage.AbhsTimeUnit;
 import com.sswh.exchange.dao.RememberLogDao;
 import com.sswh.exchange.entity.RememberList;
 import com.sswh.exchange.entity.RememberLog;
@@ -44,32 +44,32 @@ import java.util.regex.Pattern;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"}) //加载配置文件
 public class SpringTest {
-    @Autowired
-    IPlatformUserDao pdao;
-    @Autowired
+    @Resource
+    PlatformUserDao pdao;
+    @Resource
     IStudentGradeDao studentGradeDao;
-    @Autowired
+    @Resource
     IStudentGradeService gradeService;
-    @Autowired
+    @Resource
     MemberService memberService;
-    @Autowired
+    @Resource
     RecruitDao groupDao;
-    @Autowired
+    @Resource
     IFrontUserDao frontUserDao;
 
     @Resource(name = "securityManager")
     SecurityManager securityManager;
 
-    @Autowired
+    @Resource
     RememberLogDao rememberLogDao;
 
-    @Autowired
+    @Resource
     RememberLogServiceImpl rememberLogService;
 
-    @Autowired
+    @Resource
     RememberListServiceImpl rememberListService;
 
-    @Autowired
+    @Resource
     RememberService rememberService;
 
     /**
@@ -342,7 +342,7 @@ public class SpringTest {
     }
     @Test
     public void getMdt(){
-        Md5Hash md5Hash = new Md5Hash("qwer1234","dab4d1f5e7a94b7c8b927aebef6ee8d4");
+        Md5Hash md5Hash = new Md5Hash("qwer1234","44a0e43436594b1a8714655e1638c713");
         System.out.println(md5Hash.toString());
     }
 

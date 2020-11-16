@@ -3,10 +3,12 @@ package com.sswh.platform.service.impl;
 import com.sswh.dao.PlatformGroupDao;
 import com.sswh.entity.PlatformGroup;
 import com.sswh.platform.service.GroupService;
+import com.sswh.util.NumberUtil;
 import com.sswh.utils.core.StrUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -92,6 +94,19 @@ public class GroupServiceImpl implements GroupService {
         }
         int i = this.platformGroupDao.deleteByIds(StrUtil.idsToList(iids, ","));
         return i>0 ? true : false;
+    }
+
+    @Override
+    public List<Integer> queryGroupLevelList(Integer groupId, List<Integer> list) {
+
+        if(NumberUtil.getInt(groupId) == 0){
+            return list;
+        }
+        list.add(groupId);
+        PlatformGroup platformGroup = platformGroupDao.queryById(groupId);
+        groupId =  platformGroup.getPiid();
+
+        return queryGroupLevelList(groupId, list);
     }
 
 

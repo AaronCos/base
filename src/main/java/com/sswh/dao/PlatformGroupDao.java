@@ -5,9 +5,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * (PlatformGroup)表数据库访问层
+ * 平台组织结构
  *
- * @author makejava
+ * @author AaronCos
  * @since 2020-06-14 13:41:06
  */
 public interface PlatformGroupDao {

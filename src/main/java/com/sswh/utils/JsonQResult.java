@@ -8,13 +8,12 @@ import java.io.Serializable;
  */
 public class JsonQResult implements Serializable {
 
-    public static JsonQResult jsonQResult;
     /**
-     * 解析接口状态
+     * 解析接口状态代码
      */
     private int code;
     /**
-     * 解析提示文本
+     * 对提示的代码做进一步解释说明
      */
     private String msg;
     /**
@@ -29,12 +28,8 @@ public class JsonQResult implements Serializable {
     private JsonQResult() {
     }
 
-    public static synchronized JsonQResult getInstance(){
-        if(jsonQResult != null){
-            return jsonQResult;
-        }
-        jsonQResult = new JsonQResult();
-        return jsonQResult;
+    public static  JsonQResult getInstance(){
+        return new JsonQResult();
     }
 
     public int getCode() {

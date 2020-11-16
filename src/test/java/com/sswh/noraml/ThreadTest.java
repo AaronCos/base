@@ -1,6 +1,6 @@
 package com.sswh.noraml;
 
-import com.sswh.config.ThreadPoolConfig;
+import com.sswh.config.ThreadPoolTaskConfig;
 import com.sswh.model.thread.AsyncTask;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(locations = {"classpath:applicationContext.xml"}) //加载配置文件
-@ContextConfiguration(classes = ThreadPoolConfig.class)
+@ContextConfiguration(classes = ThreadPoolTaskConfig.class)
 public class ThreadTest {
     @Autowired
     public AsyncTask asyncTask;

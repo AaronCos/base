@@ -14,11 +14,11 @@ import java.util.Map;
 public interface RememberService {
 
     /**
-     * abhs query
+     * abhs 获取不同处理状态的记忆列表
      * @param userId 用户id
      * @param dealState  1:完成 0：未完成 2: 所有
      * @param date 一般是当前日期
-     * @return
+     * @return list
      */
     public List<Map<String, Object>> rememberList(Integer userId, DealState dealState, Date date);
     /**

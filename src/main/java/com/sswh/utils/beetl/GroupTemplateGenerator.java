@@ -2,8 +2,10 @@ package com.sswh.utils.beetl;
 
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;
+import org.beetl.core.ResourceLoader;
 import org.beetl.core.resource.StringTemplateResourceLoader;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 
 /**
@@ -14,6 +16,7 @@ public class GroupTemplateGenerator {
 
     private volatile static GroupTemplate groupTemplate;
 
+ 
     private GroupTemplateGenerator() {
 
     }

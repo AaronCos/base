@@ -13,12 +13,12 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 
 @Configuration
-public class ThreadPoolConfig {
+public class ThreadPoolTaskConfig {
 
     @Bean
     public ThreadPoolTaskExecutor threadPoolTaskExecutor(ThreadPoolExecutor.DiscardOldestPolicy discardOldestPolicy){
         ThreadPoolTaskExecutor tpe = new ThreadPoolTaskExecutor();
-        tpe.setCorePoolSize(10);
+        tpe.setCorePoolSize(8);
         tpe.setMaxPoolSize(100);
         //任务队列2000
         tpe.setQueueCapacity(2000);
